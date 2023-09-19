@@ -15,12 +15,11 @@ public class StarData :ValidatedMonoBehaviour
 {
     [Header("Star Parameters")]
     [SerializeField] public TypeStar type;
-    //array de booleanos del tamaño de la constelacion 
-    //true si se tiene qu conectar para ser sol false en caso contrario
-    [SerializeField] protected bool[] conections;
     [SerializeField] protected GameObject lineObj;
+   
+    List<NodeConnector> connectors = new List<NodeConnector>();
 
-    protected List<NodeConnector> connectors = new List<NodeConnector>();
+    bool mouseInRect = false;
 
     private void Awake()
     {
@@ -40,10 +39,8 @@ public class StarData :ValidatedMonoBehaviour
                 if(con != null) connectors.Add(con);
             }
         }
-    }
-    public bool[] getConnections()
-    {
-        return conections;
+
+       
     }
 
 }
