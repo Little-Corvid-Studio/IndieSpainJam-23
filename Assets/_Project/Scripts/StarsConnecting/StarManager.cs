@@ -12,20 +12,7 @@ public class StarManager : ValidatedMonoBehaviour
 
     private void Start()
     {
-        //DEBUG
-        for(int i = 0; i < starDatas.Length; i++)
-        {
-            StarNode starData =(StarNode)starDatas[i];
-            for(int j=0;j<starData.getConnections().Length;j++)
-            {
-                if (starData.getConnections()[j])
-                {
-                    Debug.Log(i+","+j);
-                    
-                }
-            }
-        
-        }
+       
     }
 
 }

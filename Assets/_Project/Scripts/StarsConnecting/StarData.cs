@@ -20,6 +20,8 @@ public class StarData :ValidatedMonoBehaviour
     [SerializeField] protected bool[] conections;
     [SerializeField] protected GameObject lineObj;
 
+    protected List<NodeConnector> connectors = new List<NodeConnector>();
+
     private void Awake()
     {
         float rot = 360/(1+(int)type);
@@ -34,6 +36,8 @@ public class StarData :ValidatedMonoBehaviour
                 GameObject go = Instantiate(lineObj, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity, null);
                 transform.Rotate(new Vector3(0, 0, rot));
                 go.transform.parent = this.transform;
+                NodeConnector con= go.GetComponent<NodeConnector>();
+                if(con != null) connectors.Add(con);
             }
         }
     }
