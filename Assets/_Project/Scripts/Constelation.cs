@@ -26,8 +26,13 @@ public class Constelation : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void OnClick(int index)
     {
-        
+        Debug.Log("Clicked " + index);
+    }
+
+    public void OnRelease(int index)
+    {
+        Debug.Log("Released " + index);
     }
 }

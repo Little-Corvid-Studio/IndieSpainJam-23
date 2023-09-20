@@ -22,7 +22,7 @@ public enum ConstellationNames
 public struct ConstellationData
 {
     public int numEstrellas;
-    public int[] conexiones;
+    public int[,] conexiones; //matriz bidimensional de conexiones
 }
 public class ConstellationList
 {
@@ -33,9 +33,9 @@ public class ConstellationList
         {
             case ConstellationNames.ARIES:
                 data.numEstrellas = 3;
-                data.conexiones= new int[2];
-                data.conexiones[0] = 1;
-                data.conexiones[1] = 2;
+                data.conexiones= new int[2,1];
+                data.conexiones[0,0] = 1;
+                data.conexiones[1,0] = 2;
                 
                 break;
             case ConstellationNames.TAURUS:

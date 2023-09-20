@@ -23,7 +23,11 @@ public class Star : MonoBehaviour
     void Update()
     {
         if(pointInRect && Input.GetMouseButtonDown(0)) {
-            Debug.Log("Click " + index);
+            constelation.OnClick(index);
+        }
+
+        else if(pointInRect && Input.GetMouseButtonUp(0)) {
+            constelation.OnRelease(index);
         }
         
     }
