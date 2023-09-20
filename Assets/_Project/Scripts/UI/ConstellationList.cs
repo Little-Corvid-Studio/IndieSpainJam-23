@@ -22,7 +22,7 @@ public enum ConstellationNames
 public struct ConstellationData
 {
     public int numEstrellas;
-    public int[,] conexiones; //matriz bidimensional de conexiones
+    public int[,] conexiones; //matriz bidimensional de conexiones[indice estrella,nºconexion por estrella]
 }
 public class ConstellationList
 {
