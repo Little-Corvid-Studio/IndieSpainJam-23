@@ -6,7 +6,11 @@ public class Star : MonoBehaviour
 {
     [Header("Indice de la estrella, ha de estar entre 0 y el num de estrellas -1 de la constelacion")]
     [SerializeField] protected int index;
+   
     Constelation constelation;
+
+    bool pointInRect = false;
+
     public int GetIndex() {  return index; }
     void Start()
     {
@@ -18,6 +22,20 @@ public class Star : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(pointInRect && Input.GetMouseButtonDown(0)) {
+            Debug.Log("Click " + index);
+        }
         
+    }
+
+    private void OnMouseOver()
+    {
+        pointInRect = true;
+    
+    }
+
+    private void OnMouseExit()
+    {
+        pointInRect = false;
     }
 }
