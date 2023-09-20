@@ -13,9 +13,7 @@ public class MoveCamera : MonoBehaviour
     }
     public void Move()
     {
-        if ((cam.transform.position.x + move.x < 100 && cam.transform.position.x + move.x > -100)
-            || (transform.position.y + move.y < 100 && transform.position.y + move.y>-100))
-                cam.transform.Translate(move);
+        cam.transform.Translate(move);
         
     }
    
