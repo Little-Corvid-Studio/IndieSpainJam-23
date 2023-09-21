@@ -12,20 +12,30 @@ public class Constelation : MonoBehaviour
     [SerializeField]ConstellationNames name;
     [SerializeField] GameObject visualConnection;
    
+    
     ConstellationData data;
     Conection currentConection;
     Star[] stars;
-    
+    SolutionImage solutionSprite;
 
+    GameObject connectingObj;
+    LineRenderer line;
     void Awake()
     {
         data = GameManager.getInstance().GetConstellationList().getConstellationData(name);
         stars = new Star[data.numEstrellas];
-
+        solutionSprite= GetComponentInChildren<SolutionImage>();
+        Debug.Log(solutionSprite!=null);
     
     }
-
-   public void AddStar(Star star)
+    private void Update()
+    {
+        if (line != null)
+        {
+            line.SetPosition(1, GameManager.getInstance().getMousePoint());
+        }
+    }
+    public void AddStar(Star star)
     {
         if (stars != null)
         {
@@ -40,16 +50,33 @@ public class Constelation : MonoBehaviour
         currentConection = new Conection();
         currentConection.PointA = index;
 
+        connectingObj = Instantiate(visualConnection, this.transform);
+        line= connectingObj.GetComponent<LineRenderer>();
+
+        line.SetPosition(0, stars[index].transform.position);
+        line.SetPosition(1, stars[index].transform.position);
 
         Debug.Log("Clicked " + index);
         
+    }
+
+    public void OnReleaseNotClicked(int index)
+    {
+        currentConection.PointA = -1;
+        currentConection.PointB = -1;
+
+        Destroy(connectingObj.gameObject);
+        connectingObj = null;
+        line = null;
     }
 
     public void OnRelease(int index)
     {
         currentConection.PointB= index;
         Debug.Log("Released " + index);
-
+        line.SetPosition(1, stars[index].transform.position);
+        line = null;
+        connectingObj = null;
 
     }
 

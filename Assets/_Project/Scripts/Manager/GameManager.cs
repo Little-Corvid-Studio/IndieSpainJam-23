@@ -3,20 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : ValidatedMonoBehaviour
 {
     private static GameManager mInstance_ = null;
 
-    [SerializeField] string[] scenes;
-
+    [SerializeField] string[] levelDialogue;
+    
     public ConstellationList ConstellationList = new ConstellationList();
     public bool[] constelationsToFind;
 
-
+    Camera cam;
+    int currentLevel;
+    int currentDialog;
     public static GameManager getInstance() { return mInstance_; }
     public ConstellationList GetConstellationList() { return ConstellationList; }
 
+    public Vector3 getMousePoint() { return cam.ScreenToWorldPoint(Input.mousePosition); }
 
     void Awake()
     {
@@ -46,11 +50,31 @@ public class GameManager : ValidatedMonoBehaviour
             constelationsToFind[i] = (int)Random.Range(-1, 2) == 1;
             Debug.Log(i + " " + constelationsToFind[i]);
         }
+
+        currentLevel = 0;
+        currentDialog = 0;
+        cam= Camera.main;
+    }
+
+    public void OnConstellationFound(ConstellationNames name)
+    {
+        constelationsToFind[(int)name] = false; //already found
+
+    }
+
+    public void OnTimeOver()
+    {
+        currentLevel++;
     }
     public void ChangeScene(string name)
     {
         SceneManager.LoadScene(name);
+    }
 
+    public void DialogChange(Text text)
+    {
+        text.text = levelDialogue[currentDialog];
+        currentDialog++;
     }
 
     // Update is called once per frame

@@ -29,7 +29,12 @@ public class Star : MonoBehaviour
         else if(pointInRect && Input.GetMouseButtonUp(0)) {
             constelation.OnRelease(index);
         }
-        
+
+        else if (!pointInRect && Input.GetMouseButtonUp(0))
+        {
+            constelation.OnReleaseNotClicked(index);
+        }
+
     }
 
     private void OnMouseOver()
