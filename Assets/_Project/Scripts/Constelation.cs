@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 
 public struct Conection
@@ -24,16 +26,14 @@ public class Constelation : MonoBehaviour
     {
         data = GameManager.getInstance().GetConstellationList().getConstellationData(name);
         stars = new Star[data.numEstrellas];
-        solutionSprite= GetComponentInChildren<SolutionImage>();
+      
         Debug.Log(solutionSprite!=null);
     
     }
-    private void Update()
+
+    public void setSolutionImage(SolutionImage sol)
     {
-        if (line != null)
-        {
-            line.SetPosition(1, GameManager.getInstance().getMousePoint());
-        }
+        solutionSprite = sol;
     }
     public void AddStar(Star star)
     {
@@ -41,6 +41,28 @@ public class Constelation : MonoBehaviour
         {
             stars[star.GetIndex()] = star;
         }
+
+        for(int i=0;i<stars.Length; i++) {
+            Debug.Log(name +" "+stars[i] != null);
+        }
+    }
+
+    
+
+    bool isSolved()
+    {
+        
+        for(int i=0; i<stars.Length; i++)
+        {
+            for(int j = 0; j < stars.Length; j++)
+            {
+                if (data.conexiones[i, j]) return false;
+            }
+        }
+       
+        return true;
+
+        
     }
 
     // Update is called once per frame
@@ -62,39 +84,48 @@ public class Constelation : MonoBehaviour
 
     public void OnReleaseNotClicked(int index)
     {
-        currentConection.PointA = -1;
-        currentConection.PointB = -1;
-
-        Destroy(connectingObj.gameObject);
-        connectingObj = null;
-        line = null;
     }
 
     public void OnRelease(int index)
     {
         currentConection.PointB= index;
         Debug.Log("Released " + index);
-        line.SetPosition(1, stars[index].transform.position);
-        line = null;
-        connectingObj = null;
+
+        checkSolution();
 
     }
 
     private void checkSolution()
     {
-        bool isSol = false;
-        for (int i = 0; i < stars.Length&&!isSol; i++) {
-            for (int j = 0; j < data.conexiones.GetLength(1) &&!isSol; j++) {
-                if ((currentConection.PointA == stars[i].GetIndex() && currentConection.PointB == stars[j].GetIndex()) 
-                    ||(currentConection.PointB == stars[i].GetIndex() && currentConection.PointA == stars[j].GetIndex()))
-                {
-                    isSol = true; 
-                } 
-            }
-        }
-        if (isSol)
+        Debug.Log(currentConection.PointA + " " + currentConection.PointB);
+        if (currentConection.PointA != -1 && currentConection.PointB != -1 && data.conexiones[currentConection.PointA, currentConection.PointB] && data.conexiones[currentConection.PointB, currentConection.PointA])
         {
-            //Unir aqui
+        
+            line.SetPosition(0, stars[currentConection.PointA].transform.position);
+            line.SetPosition(1, stars[currentConection.PointB].transform.position);
+            data.conexiones[currentConection.PointA, currentConection.PointB] = false;
+            data.conexiones[currentConection.PointB, currentConection.PointA] = false;
+
+
+            if (isSolved())
+            {
+                Debug.Log("Hiii");
+                solutionSprite.Show();
+                GameManager.getInstance().OnConstellationFound(name);
+            }
+
+
+
         }
+        currentConection.PointA = -1;
+        currentConection.PointB = -1;
+        line = null;
+        connectingObj = null;
+
     }
+       
+
+
+
+    
 }

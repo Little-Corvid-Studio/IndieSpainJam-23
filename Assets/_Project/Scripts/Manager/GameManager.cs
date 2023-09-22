@@ -20,8 +20,7 @@ public class GameManager : ValidatedMonoBehaviour
     public static GameManager getInstance() { return mInstance_; }
     public ConstellationList GetConstellationList() { return ConstellationList; }
 
-    public Vector3 getMousePoint() { return cam.ScreenToWorldPoint(Input.mousePosition); }
-
+ 
     void Awake()
     {
         if (mInstance_ == null)
@@ -47,8 +46,7 @@ public class GameManager : ValidatedMonoBehaviour
         //50% cada una de 
         for(int i = 0; i < constelationsToFind.Length; i++)
         {
-            constelationsToFind[i] = (int)Random.Range(-1, 2) == 1;
-            Debug.Log(i + " " + constelationsToFind[i]);
+            constelationsToFind[i] = true;
         }
 
         currentLevel = 0;
@@ -58,7 +56,7 @@ public class GameManager : ValidatedMonoBehaviour
 
     public void OnConstellationFound(ConstellationNames name)
     {
-        constelationsToFind[(int)name] = false; //already found
+        
 
     }
 
@@ -66,6 +64,8 @@ public class GameManager : ValidatedMonoBehaviour
     {
         currentLevel++;
     }
+
+
     public void ChangeScene(string name)
     {
         SceneManager.LoadScene(name);

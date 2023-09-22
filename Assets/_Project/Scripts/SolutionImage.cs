@@ -3,12 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SolutionImage : MonoBehaviour
+public class SolutionImage : ValidatedMonoBehaviour
 {
+    
     [SerializeField,Self]SpriteRenderer sprite;
+    Constelation constelation;
     void Start()
     {
-        sprite.enabled= false;
+        constelation= GetComponentInParent<Constelation>();
+        constelation.setSolutionImage(this);
+        sprite.enabled = false;
     }
 
    public void Show()
