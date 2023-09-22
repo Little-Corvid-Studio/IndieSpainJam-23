@@ -12,7 +12,10 @@ public class LentsManager : ValidatedMonoBehaviour
     [SerializeField]
     Image lentImage;
     [SerializeField]
-    Sprite[] sprites; 
+    Sprite[] sprites;
+
+    [SerializeField]
+    CloudManager cloudManager;
 
     Lent lent;
     Camera cam;
@@ -27,7 +30,8 @@ public class LentsManager : ValidatedMonoBehaviour
     {
         lent = Lent.Normal;
         lentImage.sprite = sprites[0];
-
+        cam.orthographicSize = 20;
+        cloudManager.Show();
     }
 
 
@@ -35,7 +39,8 @@ public class LentsManager : ValidatedMonoBehaviour
     {
         lent = Lent.Zoom;
         lentImage.sprite = sprites[1];
-
+        cam.orthographicSize = 10;
+        cloudManager.Show();
     }
 
 
@@ -43,7 +48,7 @@ public class LentsManager : ValidatedMonoBehaviour
     {
         lent = Lent.AntiFog;
         lentImage.sprite = sprites[2];
-
+        cloudManager.Hide();
     }
 
 }

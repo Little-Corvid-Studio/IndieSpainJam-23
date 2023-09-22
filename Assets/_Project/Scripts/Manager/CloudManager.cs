@@ -7,6 +7,7 @@ public class CloudManager : MonoBehaviour
   
     [SerializeField] GameObject[] cloudsObject;
     [SerializeField] int time;
+    bool enable = true;
     void OnEnable()
     {
         Invoke("SpawnCloud", time);
@@ -14,26 +15,38 @@ public class CloudManager : MonoBehaviour
 
     void SpawnCloud()
     {
-        float dir_x = Random.value;
-        float dir_y = Random.value;
+        if (enable)
+        {
+            float dir_x = Random.Range(-1, 1);
+            float dir_y = Random.Range(-1, 1);
 
-        bool random_x = (int)Random.value ==0;
-        bool random_y = (int)Random.value == 0;
 
-        if (random_x) dir_x= -dir_x;
-        if(random_y) dir_y= -dir_y;
 
-        float position_x = Random.Range(-50, 50);
-        float position_y = Random.Range(-50, 50);
 
-        int cloudIndex = (int)Random.Range(0, cloudsObject.Length);
-        GameObject g= Instantiate(cloudsObject[cloudIndex], this.transform);
-        Cloud cloud = g.GetComponent<Cloud>();
-        cloud.dir= new Vector2 (dir_x, dir_y);
-        cloud.dir.Normalize();
-        cloud.transform.position= new Vector3(position_x, position_y,0.0f);
-        
+            float position_x = Random.Range(-50, 50);
+            float position_y = Random.Range(-50, 50);
+
+            int cloudIndex = (int)Random.Range(0, cloudsObject.Length);
+            GameObject g = Instantiate(cloudsObject[cloudIndex], this.transform);
+            Cloud cloud = g.GetComponent<Cloud>();
+            cloud.dir = new Vector2(dir_x, dir_y);
+            cloud.dir.Normalize();
+            cloud.transform.position = new Vector3(position_x, position_y, 0.0f);
+        }
         Invoke("SpawnCloud", time);
     }
    
+    public void Hide()
+    {
+        var cl = GetComponentsInChildren<Cloud>();
+        for(int i = 0; i < cl.Length; i++)
+        {
+            Destroy(cl[i].gameObject);
+        }
+        enable = false;
+    }
+    public void Show()
+    {
+        this.enable = true;
+    }
 }

@@ -668,6 +668,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 457795625b685c94194c3b09ccd48b26, type: 3}
   - {fileID: 21300000, guid: f2878673417f0bd42979880aab6a7806, type: 3}
   - {fileID: 21300000, guid: 0f252d6dd0d9996439ac5d88da81aeba, type: 3}
+  cloudManager: {fileID: 422201131}
 --- !u!1 &169083475
 GameObject:
   m_ObjectHideFlags: 0
@@ -2142,7 +2143,7 @@ MonoBehaviour:
   - {fileID: 2517509320736455351, guid: 4cfab751ef4784c4ab0cca59498f3a62, type: 3}
   - {fileID: 5438692348599113621, guid: 1fa09488e0c1c204e8aaeff75d0a51c4, type: 3}
   - {fileID: 2001207987079132906, guid: d05ff35070987134d8a95ea3f3379e73, type: 3}
-  time: 10
+  time: 1
 --- !u!4 &422201132
 Transform:
   m_ObjectHideFlags: 0
