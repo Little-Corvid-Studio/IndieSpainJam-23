@@ -280,6 +280,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7835038351546647033, guid: c4e46ca6697349a49a89ff8da7afdcca, type: 3}
+      propertyPath: levelNames.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835038351546647033, guid: c4e46ca6697349a49a89ff8da7afdcca, type: 3}
+      propertyPath: levelNames.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835038351546647033, guid: c4e46ca6697349a49a89ff8da7afdcca, type: 3}
+      propertyPath: levelNames.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835038351546647033, guid: c4e46ca6697349a49a89ff8da7afdcca, type: 3}
+      propertyPath: numberOfConstellationsPerLevel.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835038351546647033, guid: c4e46ca6697349a49a89ff8da7afdcca, type: 3}
+      propertyPath: numberOfConstellationsPerLevel.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835038351546647033, guid: c4e46ca6697349a49a89ff8da7afdcca, type: 3}
+      propertyPath: numberOfConstellationsPerLevel.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
