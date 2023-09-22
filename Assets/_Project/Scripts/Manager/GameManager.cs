@@ -77,6 +77,7 @@ public class GameManager : ValidatedMonoBehaviour
         {
             //nivel resuelto
             Debug.Log("AAAA");
+
         }
 
     }
