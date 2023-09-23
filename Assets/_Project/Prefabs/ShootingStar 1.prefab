@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 3436178016218793360}
   - component: {fileID: 3561239378494508342}
   m_Layer: 0
-  m_Name: ShootingStar
+  m_Name: ShootingStar 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -217,7 +217,7 @@ Transform:
   m_GameObject: {fileID: 8692205817669891989}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -8.83, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -393,6 +393,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e763d2d866ae4ff47a33dc02da070277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dir: {x: 1, y: -1}
+  dir: {x: -1, y: 1}
   speed: 5
   time: 5
