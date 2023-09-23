@@ -307,7 +307,7 @@ TrailRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 0.9058824, g: 0.8000001, b: 0.43921572, a: 1}
-      key1: {r: 0.9686275, g: 0.70980394, b: 0.68235296, a: 1}
+      key1: {r: 0.9811321, g: 0.9760978, b: 0.92004275, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
