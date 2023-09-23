@@ -17,6 +17,9 @@ public class LentsManager : ValidatedMonoBehaviour
     [SerializeField]
     CloudManager cloudManager;
 
+    [SerializeField]
+    StressManager stressManager;
+
     Lent lent;
     Camera cam;
     // Start is called before the first frame update

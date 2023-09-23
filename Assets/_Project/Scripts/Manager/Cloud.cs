@@ -1,9 +1,8 @@
-using KBCore.Refs;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cloud : ValidatedMonoBehaviour
+public class Cloud : MonoBehaviour
 {
     public Vector2 dir;
     [SerializeField] float speed;
@@ -11,11 +10,12 @@ public class Cloud : ValidatedMonoBehaviour
 
     private void Start()
     {
-        Destroy(this.gameObject,time);
+        Destroy(this.gameObject, time);
     }
 
     private void FixedUpdate()
     {
-        this.transform.position += new Vector3(dir.x, dir.y,0.0f) * speed;
+        this.transform.position += new Vector3(dir.x, dir.y, 0.0f) * speed*Time.deltaTime;
     }
+
 }

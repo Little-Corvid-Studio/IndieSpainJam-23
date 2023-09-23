@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class ShootingStar : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public Vector2 dir;
+    [SerializeField] float speed;
+    [SerializeField] float time;
+
+    bool pointInRect = false;
+    bool clicked = false;
+
+    private void Start()
     {
-        
+        Destroy(this.gameObject, time);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        
+        if (pointInRect && Input.GetMouseButtonDown(0))
+        {
+            clicked = true;
+        }
+        this.transform.position += new Vector3(dir.x, dir.y, 0.0f) * speed * Time.deltaTime;
+    }
+
+    private void OnMouseDown()
+    {
+        pointInRect = true;
     }
 }
