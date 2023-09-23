@@ -6,6 +6,7 @@ public class TimeManager : MonoBehaviour
 {
     [SerializeField] int seconds_per_rotation;
     [SerializeField] float rotationAngle;
+    int currentRotation = 0;
    
     private void Start()
     {
@@ -14,8 +15,18 @@ public class TimeManager : MonoBehaviour
 
     void RotateALittle()
     {
-        transform.Rotate(new Vector3(0, 0, rotationAngle));
-       
-        Invoke("RotateALittle", seconds_per_rotation);
+        if (currentRotation>= 360)
+        {
+            transform.Rotate(new Vector3(0, 0, -360));
+            GameManager.getInstance().OnTimeOver();
+            currentRotation = 0;
+        }
+        else
+        {
+            currentRotation += (int)rotationAngle;
+            transform.Rotate(new Vector3(0, 0, rotationAngle));
+
+            Invoke("RotateALittle", seconds_per_rotation);
+        }
     }
 }

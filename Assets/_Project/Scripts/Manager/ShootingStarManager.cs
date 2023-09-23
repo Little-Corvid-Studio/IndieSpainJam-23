@@ -10,10 +10,10 @@ public class ShootingStarManager : MonoBehaviour
     bool enable = true;
     void OnEnable()
     {
-        Invoke("SpawnCloud", time);
+        Invoke("SpawnStar", time);
     }
 
-    void SpawnCloud()
+    void SpawnStar()
     {
         if (enable)
         {
@@ -33,7 +33,7 @@ public class ShootingStarManager : MonoBehaviour
             shoot.dir.Normalize();
             shoot.transform.position = new Vector3(position_x, position_y, 0.0f);
         }
-        Invoke("SpawnCloud", time);
+        Invoke("SpawnStar", 1);
     }
 
     public void Hide()

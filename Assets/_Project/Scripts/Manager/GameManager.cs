@@ -14,9 +14,7 @@ public class GameManager : ValidatedMonoBehaviour
     [Header("Game loop params")]
     [Header("Orden de las constelaciones a encontrar")]
     [SerializeField] ConstellationNames[] levelNames;
-    [Header("Nº de constelaciones a encontrar en el nivel. \n" +
-        "Dejad el primero a 0 para la introduccion")]
-    [SerializeField] int[] numberOfConstellationsPerLevel;
+   
     [SerializeField] SpriteRenderer[] scenesBackground;
 
 
@@ -71,14 +69,7 @@ public class GameManager : ValidatedMonoBehaviour
 
     public void OnConstellationFound(ConstellationNames name)
     {
-        constelationsToFind[(int)name] = false;
-        constelationsToFindInThatLevel++;
-        if (numberOfConstellationsPerLevel[currentLevel] == constelationsToFindInThatLevel)
-        {
-            //nivel resuelto
-            Debug.Log("AAAA");
-
-        }
+        
 
     }
 
@@ -95,23 +86,6 @@ public class GameManager : ValidatedMonoBehaviour
     public void OnSolvedLevel(int level)
     {
 
-        mDialogManager.Show();
-        
-        switch (level)
-        {
-            case 0:
-               
-                break; 
-            case 1:
-        
-                break;
-            case 2:
-                
-                break;
-            case 3:
-                
-                break;
-        }
 
     }
 
@@ -121,6 +95,11 @@ public class GameManager : ValidatedMonoBehaviour
         currentLevel++;
 
         
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 
 }

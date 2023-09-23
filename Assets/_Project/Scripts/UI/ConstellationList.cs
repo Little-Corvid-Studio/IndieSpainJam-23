@@ -97,22 +97,33 @@ public class ConstellationList
 
                 data.conexiones[0, 1] = true;
                 data.conexiones[1, 0] = true;
+
                 data.conexiones[0, 2] = true;
                 data.conexiones[2, 0] = true;
+                
                 data.conexiones[8, 2] = true;
                 data.conexiones[2, 8] = true;
+                
                 data.conexiones[3, 1] = true;
                 data.conexiones[1, 3] = true;
+                
                 data.conexiones[3, 7] = true;
                 data.conexiones[7, 3] = true;
+                
                 data.conexiones[5, 4] = true;
                 data.conexiones[4, 5] = true;
+                
                 data.conexiones[6, 4] = true;
                 data.conexiones[4, 6] = true;
+                
                 data.conexiones[4, 7] = true;
                 data.conexiones[7, 4] = true;
+                
                 data.conexiones[4, 8] = true;
+                data.conexiones[8, 4] = true;
+
                 data.conexiones[7, 8] = true;
+                data.conexiones[8, 7] = true;
 
                 break;
             case ConstellationNames.VIRGO:
