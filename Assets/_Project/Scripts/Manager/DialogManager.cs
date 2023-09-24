@@ -10,9 +10,6 @@ public class DialogManager : Singleton<DialogManager>
     [SerializeField] private Image image;
     [SerializeField] private TextMeshProUGUI text;
 
-    // Debug
-    [SerializeField] private StoryManager storyManager;
-
     private bool animatedDialog;
 
     public void startStoryPanel(StoryManager story) {
@@ -24,7 +21,6 @@ public class DialogManager : Singleton<DialogManager>
 
     private void Start() {
         storySequence = new Queue<StoryScene>();
-        startStoryPanel(storyManager);
     }
 
     private void Update() {
