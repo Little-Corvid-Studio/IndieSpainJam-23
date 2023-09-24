@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ad6f0d6dae948c40b57113e4c1fa595, type: 3}
+  m_Name: Intro
+  m_EditorClassIdentifier: 
+  scene:
+  - image: {fileID: 21300000, guid: 86648a59ed11fa2489154c1f7ffde634, type: 3}
+    text: "Arist\xF3teles es un buho que tiene af\xE1n por las estrellas. Y las observa
+      regularmente"
+    isLinkedWithPrevious: 0
+    isItalic: 1
+  - image: {fileID: 21300000, guid: f80cb1b879c15c447a4ebb31920e1e58, type: 3}
+    text: "Pero hoy sus vecinos, la familia Gallina celebra un cumplea\xF1os con
+      luces, m\xFAsica y bailes."
+    isLinkedWithPrevious: 0
+    isItalic: 1
+  - image: {fileID: 21300000, guid: 323da80a232c9974bbb1a307d5415dbf, type: 3}
+    text: "M\xE1s les vale no molestarme mucho en mi noche de observaci\xF3n..."
+    isLinkedWithPrevious: 0
+    isItalic: 0

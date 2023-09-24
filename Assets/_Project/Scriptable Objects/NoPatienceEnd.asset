@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ad6f0d6dae948c40b57113e4c1fa595, type: 3}
+  m_Name: NoPatienceEnd
+  m_EditorClassIdentifier: 
+  scene:
+  - image: {fileID: 21300000, guid: 51bb29ed94c253646b55bec4f70971bc, type: 3}
+    text: "\xA1Arg! Me rindo"
+    isLinkedWithPrevious: 0
+    isItalic: 0
+  - image: {fileID: 21300000, guid: ac65c49dd3d9aa343b7e7fa959267c6f, type: 3}
+    text: "Y Arist\xF3teles se fue a dormir, pensando en c\xF3mo, quiz\xE1s, si hubiese
+      tenido m\xE1s paciencia hubiese visto m\xE1s estrellas..."
+    isLinkedWithPrevious: 0
+    isItalic: 1
+  - image: {fileID: 21300000, guid: ac65c49dd3d9aa343b7e7fa959267c6f, type: 3}
+    text: "\xBFQuien sabe? Quiz\xE1s pudiese haber encontrado alguien con quien verlas."
+    isLinkedWithPrevious: 1
+    isItalic: 1

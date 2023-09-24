@@ -1,47 +1,89 @@
-using KBCore.Refs;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-public class DialogManager : ValidatedMonoBehaviour
+
+public class DialogManager : Singleton<DialogManager>
 {
-    [SerializeField] GameObject dialogContainer;
-    Text dialogText;
-    [SerializeField] Image scene;
+    [SerializeField] private GameObject dialogPanel;
+    [SerializeField] private Image image;
+    [SerializeField] private TextMeshProUGUI text;
 
-    int currentPanel = 0;
+    // Debug
+    [SerializeField] private StoryManager storyManager;
 
-    private void Awake()
-    {
-        GameManager.getInstance().setDialogManager(this);
-    }
-    private void Start()
-    {
+    private bool animatedDialog;
 
-        dialogText=dialogContainer.GetComponentInChildren<Text>();
-        dialogContainer.SetActive(false);
-        dialogText.text = "text";
+    public void startStoryPanel(StoryManager story) {
+        openCloseStoryPanel(true);
+        loadSequence(story);
+
+        nextSequence();
     }
 
-    public void Show()
-    {
-        dialogContainer.SetActive(true);
+    private void Start() {
+        storySequence = new Queue<StoryScene>();
+        startStoryPanel(storyManager);
     }
 
-    public void Close()
-    {
-        dialogContainer.SetActive(false);
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            if (animatedDialog) {
+                nextSequence();
+            }
+        }
     }
 
-    public void setDialog(string msg)
-    {
-        dialogText.text = msg;
+    private Queue<StoryScene> storySequence;
+
+    private void nextSequence() {
+
+        if (storySequence.Count == 0) {
+            // Siguente Nivel
+            return;
+        }
+
+        StoryScene nextSequence = storySequence.Dequeue();
+        image.sprite = nextSequence.image;
+
+        if (nextSequence.isItalic) {
+            text.fontStyle = FontStyles.Italic;
+        } else {
+            text.fontStyle = FontStyles.Normal;
+        }
+
+        ShowAnimatedText(nextSequence.text);
     }
 
-    public void setImage(Image img)
-    {
-        scene.sprite = img.sprite;
+    private void loadSequence(StoryManager story) {
+        if (story.scene == null || story.scene.Length <= 0) {
+            return;
+        }
+
+        for (int i = 0; i < story.scene.Length; i++) {
+            storySequence.Enqueue(story.scene[i]);
+        }
     }
 
+    public void openCloseStoryPanel(bool state) {
+        dialogPanel.SetActive(state);
+    }
 
+    private IEnumerator TextAnimator(string unAnimatedText) {
+        animatedDialog = false;
+
+        text.text = "";
+        char[] lyrics = unAnimatedText.ToCharArray();
+        for (int i = 0; i < lyrics.Length; i++) {
+            text.text += lyrics[i];
+            yield return new WaitForSeconds(0.04f);
+        }
+
+        animatedDialog = true;
+    }
+
+    private void ShowAnimatedText(string unAnimatedText) {
+        StartCoroutine(TextAnimator(unAnimatedText));
+    }
 }

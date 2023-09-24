@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ad6f0d6dae948c40b57113e4c1fa595, type: 3}
+  m_Name: NoPoliceEnd
+  m_EditorClassIdentifier: 
+  scene:
+  - image: {fileID: 21300000, guid: 7fd378661699b3046b25295feb0e9db0, type: 3}
+    text: "\xBFQu\xE9 haces?"
+    isLinkedWithPrevious: 0
+    isItalic: 0
+  - image: {fileID: 21300000, guid: 7fd378661699b3046b25295feb0e9db0, type: 3}
+    text: Estudio las estrellas
+    isLinkedWithPrevious: 0
+    isItalic: 0
+  - image: {fileID: 21300000, guid: 7fd378661699b3046b25295feb0e9db0, type: 3}
+    text: "Guaaaau... \xBFPuedo mirar?"
+    isLinkedWithPrevious: 0
+    isItalic: 0
+  - image: {fileID: 21300000, guid: eb5379b88bec3fe439630985fd00d5b3, type: 3}
+    text: "D\xEDsculpele se\xF1or Arist\xF3teles, es su cumplea\xF1os."
+    isLinkedWithPrevious: 0
+    isItalic: 0
+  - image: {fileID: 21300000, guid: eb5379b88bec3fe439630985fd00d5b3, type: 3}
+    text: "Le vi volar solo, deb\xEDmos haberle molestado, por favor disc\xFAlpenos
+      por interrumpir su estudio."
+    isLinkedWithPrevious: 1
+    isItalic: 0
+  - image: {fileID: 21300000, guid: eb5379b88bec3fe439630985fd00d5b3, type: 3}
+    text: "\xBFLe podemos acompa\xF1ar? Traemos comida y los pollitos est\xE1n fascinados
+      por aprender mas sobre su estudio. No deber\xEDa aislarse por nuestro festejo."
+    isLinkedWithPrevious: 1
+    isItalic: 0
+  - image: {fileID: 21300000, guid: 275af5a6b52146240a78ad66f442b83b, type: 3}
+    text: "Y as\xED el gru\xF1\xF3n b\xFAho decidi\xF3 que la pr\xF3xima vez que
+      alguien le molestase, deb\xEDa hablarlo, pues quiz\xE1s le abrir\xEDa la puesta
+      a algo nuevo sin perderse nada."
+    isLinkedWithPrevious: 0
+    isItalic: 1

@@ -91,10 +91,8 @@ public class GameManager : ValidatedMonoBehaviour
 
     public void OnDialogFinished()
     {
-        mDialogManager.Close();
+        mDialogManager.openCloseStoryPanel(false);
         currentLevel++;
-
-        
     }
 
     public void Quit()
