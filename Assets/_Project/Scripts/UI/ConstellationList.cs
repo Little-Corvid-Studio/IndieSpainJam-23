@@ -7,15 +7,16 @@ public enum ConstellationNames
     ARIES,
     TAURUS,
     GEMINI,
+    CANCER,
+   
     VIRGO,
     LIBRA,
-    CANCER,
     SCORPIO,
     SAGITARIO,
+
     CAPRICORNIO,
     AQUARIUS,
     PISCIS,
-
     MAYOR,
     MINOR,
 
