@@ -21,7 +21,7 @@ public class GameManager : ValidatedMonoBehaviour
     [Space(10)]
     [Header("Dialog")]
     [SerializeField] string[] levelDialogue;
-    [SerializeField] Image[] images; 
+    [SerializeField] Sprite[] images; 
 
 
     public ConstellationList ConstellationList = new ConstellationList();
@@ -33,6 +33,7 @@ public class GameManager : ValidatedMonoBehaviour
     public static GameManager getInstance() { return mInstance_; }
     public ConstellationList GetConstellationList() { return ConstellationList; }
 
+    public Sprite getNote(int index) { return images[index]; }
     public void setDialogManager(DialogManager dialogManager) { mDialogManager = dialogManager; }
  
     void Awake()
