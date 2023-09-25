@@ -517,6 +517,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &784669470 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1155652023696259007, guid: f57430b259010e545b1fc840f46bf1a2, type: 3}
+  m_PrefabInstance: {fileID: 784669468}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &784669471 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7828728567843922666, guid: f57430b259010e545b1fc840f46bf1a2, type: 3}
+  m_PrefabInstance: {fileID: 784669468}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &784669472 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7528360934113036341, guid: f57430b259010e545b1fc840f46bf1a2, type: 3}
+  m_PrefabInstance: {fileID: 784669468}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &968721056
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -692,10 +719,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b02a117866a23e54f8b2070b362436df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogPanel: {fileID: 0}
-  image: {fileID: 0}
-  text: {fileID: 0}
-  gameManager: {fileID: 0}
+  dialogPanel: {fileID: 784669472}
+  image: {fileID: 784669471}
+  text: {fileID: 784669470}
+  gameManager: {fileID: 7835038351546647033, guid: c4e46ca6697349a49a89ff8da7afdcca, type: 3}
 --- !u!4 &1216828123
 Transform:
   m_ObjectHideFlags: 0
@@ -723,7 +750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 370d9f67e77a28b47a0dd98c5e100487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stressImage: {fileID: 0}
+  stressImage: {fileID: 784669469}
   startStress: 0
   maxStress: 80
   stressGainAmount: 1

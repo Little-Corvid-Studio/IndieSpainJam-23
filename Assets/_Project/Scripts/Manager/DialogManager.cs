@@ -22,9 +22,10 @@ public class DialogManager : Singleton<DialogManager>
     }
 
     private void Start() {
+        storySequence = new Queue<StoryScene>();
+
         gameManager.setDialogManager(this);
         gameManager.OnSolvedLevel(0);
-        storySequence = new Queue<StoryScene>();
     }
 
     private void Update() {

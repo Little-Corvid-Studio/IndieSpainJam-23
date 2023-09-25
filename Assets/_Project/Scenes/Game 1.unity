@@ -510,7 +510,7 @@ MonoBehaviour:
   dialogPanel: {fileID: 934460206}
   image: {fileID: 820362533}
   text: {fileID: 1525602160}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 7835038351546647033, guid: c4e46ca6697349a49a89ff8da7afdcca, type: 3}
 --- !u!4 &1199380476
 Transform:
   m_ObjectHideFlags: 0
