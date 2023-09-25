@@ -20,7 +20,7 @@ public class GameManager : ValidatedMonoBehaviour
 
     [Space(10)]
     [Header("Dialog")]
-    [SerializeField] string[] levelDialogue;
+    [SerializeField] StoryManager[] storyManagers;
     [SerializeField] Sprite[] images; 
 
 
@@ -64,7 +64,7 @@ public class GameManager : ValidatedMonoBehaviour
             constelationsToFind[i] = true;
         }
 
-        currentLevel = 0;
+        currentLevel = 1;
         cam= Camera.main;
     }
 
@@ -86,8 +86,7 @@ public class GameManager : ValidatedMonoBehaviour
 
     public void OnSolvedLevel(int level)
     {
-
-
+        mDialogManager.startStoryPanel(storyManagers[level]);
     }
 
     public void OnDialogFinished()

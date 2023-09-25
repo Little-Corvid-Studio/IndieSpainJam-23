@@ -313,6 +313,54 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 447209891551754167, guid: f57430b259010e545b1fc840f46bf1a2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 38288b076562db44a8312c2458e5de9b, type: 3}
+    - target: {fileID: 2559723354705657875, guid: f57430b259010e545b1fc840f46bf1a2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674866438315062241, guid: f57430b259010e545b1fc840f46bf1a2, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1450
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674866438315062241, guid: f57430b259010e545b1fc840f46bf1a2, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 320
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674866438315062241, guid: f57430b259010e545b1fc840f46bf1a2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -340
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483349051988063299, guid: f57430b259010e545b1fc840f46bf1a2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483349051988063299, guid: f57430b259010e545b1fc840f46bf1a2, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483349051988063299, guid: f57430b259010e545b1fc840f46bf1a2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483349051988063299, guid: f57430b259010e545b1fc840f46bf1a2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430785812082396719, guid: f57430b259010e545b1fc840f46bf1a2, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430785812082396719, guid: f57430b259010e545b1fc840f46bf1a2, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 560
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430785812082396719, guid: f57430b259010e545b1fc840f46bf1a2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 165
+      objectReference: {fileID: 0}
     - target: {fileID: 5561299951176186367, guid: f57430b259010e545b1fc840f46bf1a2, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -405,11 +453,70 @@ PrefabInstance:
       propertyPath: initConstellation
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 7514158546170572304, guid: f57430b259010e545b1fc840f46bf1a2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514158546170572304, guid: f57430b259010e545b1fc840f46bf1a2, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514158546170572304, guid: f57430b259010e545b1fc840f46bf1a2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514158546170572304, guid: f57430b259010e545b1fc840f46bf1a2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528360934113036341, guid: f57430b259010e545b1fc840f46bf1a2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8118822505212772400, guid: f57430b259010e545b1fc840f46bf1a2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8118822505212772400, guid: f57430b259010e545b1fc840f46bf1a2, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8118822505212772400, guid: f57430b259010e545b1fc840f46bf1a2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8118822505212772400, guid: f57430b259010e545b1fc840f46bf1a2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8915250834996838938, guid: f57430b259010e545b1fc840f46bf1a2, type: 3}
+      propertyPath: maxStress
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 8915250834996838938, guid: f57430b259010e545b1fc840f46bf1a2, type: 3}
+      propertyPath: stressImage
+      value: 
+      objectReference: {fileID: 784669469}
+    - target: {fileID: 8915250834996838938, guid: f57430b259010e545b1fc840f46bf1a2, type: 3}
+      propertyPath: maxStressScene
+      value: 
+      objectReference: {fileID: 11400000, guid: a207a29693b513b4a949f6fc8d3ad0a4, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f57430b259010e545b1fc840f46bf1a2, type: 3}
+--- !u!114 &784669469 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1543410143962701460, guid: f57430b259010e545b1fc840f46bf1a2, type: 3}
+  m_PrefabInstance: {fileID: 784669468}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &968721056
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -588,6 +695,7 @@ MonoBehaviour:
   dialogPanel: {fileID: 0}
   image: {fileID: 0}
   text: {fileID: 0}
+  gameManager: {fileID: 0}
 --- !u!4 &1216828123
 Transform:
   m_ObjectHideFlags: 0
@@ -618,6 +726,8 @@ MonoBehaviour:
   stressImage: {fileID: 0}
   startStress: 0
   maxStress: 80
+  stressGainAmount: 1
+  stressGainSpeed: 5
   maxStressScene: {fileID: 11400000, guid: a207a29693b513b4a949f6fc8d3ad0a4, type: 2}
 --- !u!1001 &1259515213
 PrefabInstance:
@@ -926,7 +1036,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelNames: 
   scenesBackground: []
-  levelDialogue: []
+  storyManagers: []
   images: []
 --- !u!4 &1417372959
 Transform:

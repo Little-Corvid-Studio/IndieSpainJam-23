@@ -44,5 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5724262cf603f8d46904aa05b6106038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenes: []
-  constelationsToFind: 
+  levelNames: 
+  scenesBackground: []
+  storyManagers:
+  - {fileID: 11400000, guid: f8cd5a07a69f8204aa772ac5f67e1bb1, type: 2}
+  - {fileID: 11400000, guid: 4e124cc182d1dd94b87c0c58bb9f3901, type: 2}
+  - {fileID: 11400000, guid: 1c9b976a594c90947a49f05df02e8df7, type: 2}
+  - {fileID: 11400000, guid: 21c9dd545e2f4ec479b9d544cb4e9f0f, type: 2}
+  - {fileID: 11400000, guid: fbecb6383f542f14f9d6c5ea41302a60, type: 2}
+  - {fileID: 11400000, guid: a207a29693b513b4a949f6fc8d3ad0a4, type: 2}
+  images: []

@@ -11,6 +11,9 @@ public class StressManager : ValidatedMonoBehaviour
     [SerializeField] private float startStress;
     [SerializeField] private float maxStress;
 
+    [SerializeField, Tooltip("Cantidad de Estrés que se gana")] private float stressGainAmount = 1f;
+    [SerializeField, Tooltip("Cada cuantos segundos se gana Estrés")] private float stressGainSpeed = 5f;
+
     [SerializeField] private StoryManager maxStressScene;
 
     public float ActualStress { get; private set; }
@@ -19,7 +22,7 @@ public class StressManager : ValidatedMonoBehaviour
     private void Start() {
         dialogManager = GetComponent<DialogManager>();
         ActualStress = startStress;
-        InvokeRepeating(nameof(GainStress), 1, 5);
+        InvokeRepeating(nameof(GainStress), 1, stressGainSpeed);
     }
 
     private void Update() {
@@ -29,7 +32,7 @@ public class StressManager : ValidatedMonoBehaviour
 
     private void GainStress() {
         if (ActualStress < maxStress) {
-            ActualStress += 1;
+            ActualStress += stressGainAmount;
             if (ActualStress >= maxStress) {
                 dialogManager.startStoryPanel(maxStressScene);
             }

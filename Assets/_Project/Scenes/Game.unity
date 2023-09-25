@@ -171,6 +171,7 @@ MonoBehaviour:
   dialogPanel: {fileID: 1596991149}
   image: {fileID: 1881460405}
   text: {fileID: 117346954}
+  gameManager: {fileID: 0}
 --- !u!114 &8317255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,6 +187,8 @@ MonoBehaviour:
   stressImage: {fileID: 203140153}
   startStress: 0
   maxStress: 80
+  stressGainAmount: 1
+  stressGainSpeed: 5
   maxStressScene: {fileID: 11400000, guid: a207a29693b513b4a949f6fc8d3ad0a4, type: 2}
 --- !u!1 &15844752
 GameObject:
@@ -1696,6 +1699,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 6
   visualConnection: {fileID: 8141401418436699556, guid: 7475ae4fbcca4334593fba03dfff649e, type: 3}
+  constellationsManager: {fileID: 0}
+  numConstellation: 0
 --- !u!1 &169083475
 GameObject:
   m_ObjectHideFlags: 0
@@ -2569,6 +2574,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 1
   visualConnection: {fileID: 8141401418436699556, guid: 7475ae4fbcca4334593fba03dfff649e, type: 3}
+  constellationsManager: {fileID: 0}
+  numConstellation: 0
 --- !u!1 &221327359
 GameObject:
   m_ObjectHideFlags: 0
@@ -4258,6 +4265,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 11
   visualConnection: {fileID: 8141401418436699556, guid: 7475ae4fbcca4334593fba03dfff649e, type: 3}
+  constellationsManager: {fileID: 0}
+  numConstellation: 0
 --- !u!1 &391671115
 GameObject:
   m_ObjectHideFlags: 0
@@ -4313,6 +4322,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 3
   visualConnection: {fileID: 8141401418436699556, guid: 7475ae4fbcca4334593fba03dfff649e, type: 3}
+  constellationsManager: {fileID: 0}
+  numConstellation: 0
 --- !u!1 &394669232
 GameObject:
   m_ObjectHideFlags: 0
@@ -4634,6 +4645,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 5
   visualConnection: {fileID: 8141401418436699556, guid: 7475ae4fbcca4334593fba03dfff649e, type: 3}
+  constellationsManager: {fileID: 0}
+  numConstellation: 0
 --- !u!1 &422201130
 GameObject:
   m_ObjectHideFlags: 0
@@ -5201,6 +5214,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 12
   visualConnection: {fileID: 8141401418436699556, guid: 7475ae4fbcca4334593fba03dfff649e, type: 3}
+  constellationsManager: {fileID: 0}
+  numConstellation: 0
 --- !u!1 &516564758
 GameObject:
   m_ObjectHideFlags: 0
@@ -5254,6 +5269,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 10
   visualConnection: {fileID: 8141401418436699556, guid: 7475ae4fbcca4334593fba03dfff649e, type: 3}
+  constellationsManager: {fileID: 0}
+  numConstellation: 0
 --- !u!1 &522395597
 GameObject:
   m_ObjectHideFlags: 0
@@ -5542,6 +5559,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 9
   visualConnection: {fileID: 8141401418436699556, guid: 7475ae4fbcca4334593fba03dfff649e, type: 3}
+  constellationsManager: {fileID: 0}
+  numConstellation: 0
 --- !u!1 &529568899
 GameObject:
   m_ObjectHideFlags: 0
@@ -9664,6 +9683,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 7
   visualConnection: {fileID: 8141401418436699556, guid: 7475ae4fbcca4334593fba03dfff649e, type: 3}
+  constellationsManager: {fileID: 0}
+  numConstellation: 0
 --- !u!1 &994297628
 GameObject:
   m_ObjectHideFlags: 0
@@ -13139,6 +13160,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 2
   visualConnection: {fileID: 8141401418436699556, guid: 7475ae4fbcca4334593fba03dfff649e, type: 3}
+  constellationsManager: {fileID: 0}
+  numConstellation: 0
 --- !u!1 &1250212024
 GameObject:
   m_ObjectHideFlags: 0
@@ -13474,6 +13497,10 @@ PrefabInstance:
     - target: {fileID: 8692205817669891989, guid: fe970f546c1699f438192316d20b850d, type: 3}
       propertyPath: m_Name
       value: Moon
+      objectReference: {fileID: 0}
+    - target: {fileID: 8692205817669891989, guid: fe970f546c1699f438192316d20b850d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3561239378494508342, guid: fe970f546c1699f438192316d20b850d, type: 3}
@@ -16109,7 +16136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelNames: 
   scenesBackground: []
-  levelDialogue: []
+  storyManagers: []
   images: []
 --- !u!4 &1417372959
 Transform:
@@ -18312,10 +18339,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 370d9f67e77a28b47a0dd98c5e100487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stressImage: {fileID: 0}
+  stressImage: {fileID: 203140153}
   startStress: 0
-  maxStress: 0
-  maxStressScene: {fileID: 0}
+  maxStress: 80
+  stressGainAmount: 1
+  stressGainSpeed: 5
+  maxStressScene: {fileID: 11400000, guid: a207a29693b513b4a949f6fc8d3ad0a4, type: 2}
 --- !u!1 &1750214069
 GameObject:
   m_ObjectHideFlags: 0
@@ -20676,6 +20705,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 4
   visualConnection: {fileID: 8141401418436699556, guid: 7475ae4fbcca4334593fba03dfff649e, type: 3}
+  constellationsManager: {fileID: 0}
+  numConstellation: 0
 --- !u!1 &1901723203
 GameObject:
   m_ObjectHideFlags: 0
@@ -20728,6 +20759,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 8
   visualConnection: {fileID: 8141401418436699556, guid: 7475ae4fbcca4334593fba03dfff649e, type: 3}
+  constellationsManager: {fileID: 0}
+  numConstellation: 0
 --- !u!1 &1905897376
 GameObject:
   m_ObjectHideFlags: 0
@@ -22429,6 +22462,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 0
   visualConnection: {fileID: 8141401418436699556, guid: 7475ae4fbcca4334593fba03dfff649e, type: 3}
+  constellationsManager: {fileID: 0}
+  numConstellation: 0
 --- !u!1 &2002849187
 GameObject:
   m_ObjectHideFlags: 0
