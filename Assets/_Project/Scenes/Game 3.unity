@@ -2367,6 +2367,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -6.1399994
       objectReference: {fileID: 0}
+    - target: {fileID: 2487198662338078937, guid: 19660d794b9dd6643bb21e415cdbf929, type: 3}
+      propertyPath: numConstellation
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2487198662338078937, guid: 19660d794b9dd6643bb21e415cdbf929, type: 3}
+      propertyPath: constellationsManager
+      value: 
+      objectReference: {fileID: 1395400994}
+    - target: {fileID: 2881568707671196627, guid: 19660d794b9dd6643bb21e415cdbf929, type: 3}
+      propertyPath: constellationsManager
+      value: 
+      objectReference: {fileID: 1395400994}
     - target: {fileID: 3446362075904497590, guid: 19660d794b9dd6643bb21e415cdbf929, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2419,6 +2431,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConstellationManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3850535869080928381, guid: 19660d794b9dd6643bb21e415cdbf929, type: 3}
+      propertyPath: numConstellation
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3850535869080928381, guid: 19660d794b9dd6643bb21e415cdbf929, type: 3}
+      propertyPath: constellationsManager
+      value: 
+      objectReference: {fileID: 1395400994}
     - target: {fileID: 5023153699503800678, guid: 19660d794b9dd6643bb21e415cdbf929, type: 3}
       propertyPath: m_LocalPosition.x
       value: 35.55
@@ -2443,6 +2463,22 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 19.62368
       objectReference: {fileID: 0}
+    - target: {fileID: 7251527595416568668, guid: 19660d794b9dd6643bb21e415cdbf929, type: 3}
+      propertyPath: numConstellation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7251527595416568668, guid: 19660d794b9dd6643bb21e415cdbf929, type: 3}
+      propertyPath: constellationsManager
+      value: 
+      objectReference: {fileID: 1395400994}
+    - target: {fileID: 8194044478052688527, guid: 19660d794b9dd6643bb21e415cdbf929, type: 3}
+      propertyPath: numConstellation
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194044478052688527, guid: 19660d794b9dd6643bb21e415cdbf929, type: 3}
+      propertyPath: constellationsManager
+      value: 
+      objectReference: {fileID: 1395400994}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 6072634092505820832, guid: 19660d794b9dd6643bb21e415cdbf929, type: 3}
@@ -2454,8 +2490,31 @@ PrefabInstance:
     - {fileID: 7776380670376006640, guid: 19660d794b9dd6643bb21e415cdbf929, type: 3}
     - {fileID: 6353280170523153189, guid: 19660d794b9dd6643bb21e415cdbf929, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3841866943171691300, guid: 19660d794b9dd6643bb21e415cdbf929, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1395400994}
   m_SourcePrefab: {fileID: 100100000, guid: 19660d794b9dd6643bb21e415cdbf929, type: 3}
+--- !u!1 &1395400993 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3841866943171691300, guid: 19660d794b9dd6643bb21e415cdbf929, type: 3}
+  m_PrefabInstance: {fileID: 1395400992}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1395400994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395400993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f2e94dc18c09942881a84e7d8cc9f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+  numConstellationsTotal: 5
+  nextScene: Menu
 --- !u!1 &1406172069
 GameObject:
   m_ObjectHideFlags: 0

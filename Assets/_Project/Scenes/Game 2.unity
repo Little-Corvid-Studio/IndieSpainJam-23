@@ -2655,6 +2655,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConstellationManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6175820958451908872, guid: 19660d794b9dd6643bb21e415cdbf929, type: 3}
+      propertyPath: numConstellation
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6175820958451908872, guid: 19660d794b9dd6643bb21e415cdbf929, type: 3}
+      propertyPath: constellationsManager
+      value: 
+      objectReference: {fileID: 1564216516}
+    - target: {fileID: 6831272378578405908, guid: 19660d794b9dd6643bb21e415cdbf929, type: 3}
+      propertyPath: constellationsManager
+      value: 
+      objectReference: {fileID: 1564216516}
+    - target: {fileID: 8319256541106216373, guid: 19660d794b9dd6643bb21e415cdbf929, type: 3}
+      propertyPath: numConstellation
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8319256541106216373, guid: 19660d794b9dd6643bb21e415cdbf929, type: 3}
+      propertyPath: constellationsManager
+      value: 
+      objectReference: {fileID: 1564216516}
+    - target: {fileID: 8521581885517074170, guid: 19660d794b9dd6643bb21e415cdbf929, type: 3}
+      propertyPath: numConstellation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8521581885517074170, guid: 19660d794b9dd6643bb21e415cdbf929, type: 3}
+      propertyPath: constellationsManager
+      value: 
+      objectReference: {fileID: 1564216516}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 6353280170523153189, guid: 19660d794b9dd6643bb21e415cdbf929, type: 3}
@@ -2667,8 +2695,31 @@ PrefabInstance:
     - {fileID: 2608079674036347913, guid: 19660d794b9dd6643bb21e415cdbf929, type: 3}
     - {fileID: 6140361166275832213, guid: 19660d794b9dd6643bb21e415cdbf929, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3841866943171691300, guid: 19660d794b9dd6643bb21e415cdbf929, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1564216516}
   m_SourcePrefab: {fileID: 100100000, guid: 19660d794b9dd6643bb21e415cdbf929, type: 3}
+--- !u!1 &1564216515 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3841866943171691300, guid: 19660d794b9dd6643bb21e415cdbf929, type: 3}
+  m_PrefabInstance: {fileID: 1564216514}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1564216516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564216515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f2e94dc18c09942881a84e7d8cc9f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1417372958}
+  numConstellationsTotal: 4
+  nextScene: Game 3
 --- !u!1 &1640880930
 GameObject:
   m_ObjectHideFlags: 0

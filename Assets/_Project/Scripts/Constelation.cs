@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 
 public struct Conection
@@ -22,6 +23,10 @@ public class Constelation : MonoBehaviour
 
     GameObject connectingObj;
     LineRenderer line;
+
+    [SerializeField] ConstellationsManager constellationsManager;
+    [SerializeField] int numConstellation;
+
     void Awake()
     {
         data = GameManager.getInstance().GetConstellationList().getConstellationData(name);
@@ -112,6 +117,8 @@ public class Constelation : MonoBehaviour
                 Debug.Log("Hiii");
                 solutionSprite.Show();
                 GameManager.getInstance().OnConstellationFound(name);
+
+                constellationsManager.CheckConditionLevel(numConstellation);
             }
 
 
