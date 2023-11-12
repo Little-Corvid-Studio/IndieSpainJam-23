@@ -16,10 +16,11 @@ public class StressManager : ValidatedMonoBehaviour
 
     [SerializeField] private StoryManager maxStressScene;
 
-    public float ActualStress { get; private set; }
+    public float ActualStress { get; set; }
     private DialogManager dialogManager;
 
     private void Start() {
+        GameManager.getInstance().setStressManager(this);
         dialogManager = GetComponent<DialogManager>();
         ActualStress = startStress;
         InvokeRepeating(nameof(GainStress), 1, stressGainSpeed);
@@ -37,5 +38,9 @@ public class StressManager : ValidatedMonoBehaviour
                 dialogManager.startStoryPanel(maxStressScene);
             }
         }
+    }
+
+    public void ResetStress() {
+        ActualStress = startStress;
     }
 }

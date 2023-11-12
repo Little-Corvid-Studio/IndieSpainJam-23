@@ -10,8 +10,6 @@ public class DialogManager : Singleton<DialogManager>
     [SerializeField] private Image image;
     [SerializeField] private TextMeshProUGUI text;
 
-    [SerializeField] private GameManager gameManager;
-
     private bool animatedDialog;
 
     public void startStoryPanel(StoryManager story) {
@@ -23,9 +21,8 @@ public class DialogManager : Singleton<DialogManager>
 
     private void Start() {
         storySequence = new Queue<StoryScene>();
-
-        gameManager.setDialogManager(this);
-        gameManager.OnSolvedLevel(0);
+        GameManager.getInstance().setDialogManager(this);
+        startStoryPanel(GameManager.getInstance().storyManagers[0]);
     }
 
     private void Update() {
@@ -41,7 +38,7 @@ public class DialogManager : Singleton<DialogManager>
     private void nextSequence() {
 
         if (storySequence.Count == 0) {
-            gameManager.OnDialogFinished();
+            GameManager.getInstance().OnDialogFinished();
             return;
         }
 

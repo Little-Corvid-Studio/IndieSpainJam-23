@@ -4,23 +4,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class GameManager : ValidatedMonoBehaviour
 {
     private static GameManager mInstance_ = null;
 
     private DialogManager mDialogManager = null;
+    private StressManager mStressManager = null;
+    private ConstellationsManager mConstellationsManager = null;
 
     [Header("Game loop params")]
-    [Header("Orden de las constelaciones a encontrar")]
-    [SerializeField] ConstellationNames[] levelNames;
    
     [SerializeField] SpriteRenderer[] scenesBackground;
 
 
     [Space(10)]
     [Header("Dialog")]
-    [SerializeField] StoryManager[] storyManagers;
+    [SerializeField] public StoryManager[] storyManagers;
     [SerializeField] Sprite[] images; 
 
 
@@ -28,14 +29,15 @@ public class GameManager : ValidatedMonoBehaviour
     protected bool[] constelationsToFind;
 
     Camera cam;
-    int currentLevel;
-    int constelationsToFindInThatLevel;
+    private int currentLevel;
     public static GameManager getInstance() { return mInstance_; }
     public ConstellationList GetConstellationList() { return ConstellationList; }
 
     public Sprite getNote(int index) { return images[index]; }
     public void setDialogManager(DialogManager dialogManager) { mDialogManager = dialogManager; }
- 
+    public void setStressManager(StressManager stressManager) { mStressManager = stressManager; }
+    public void setConstellationManager(ConstellationsManager constellationsManager) { mConstellationsManager = constellationsManager; }
+
     void Awake()
     {
         if (mInstance_ == null)
@@ -51,32 +53,19 @@ public class GameManager : ValidatedMonoBehaviour
 
     }
 
-    /// <summary>
-    /// Generamos una lista de las constelaciones a buscar de modo que no sea la misma
-    /// y así dar rejugabilidad
-    /// </summary>
     public void OnGameStart()
     {
-        constelationsToFind= new bool[(int)ConstellationNames.NUM_CONSTELLATIONS];
+/*        constelationsToFind = new bool[(int)System.Enum.GetValues(typeof(ConstellationNames)).Length];
       
-        for(int i = 0; i < constelationsToFind.Length; i++)
+        for (int i = 0; i < constelationsToFind.Length; i++)
         {
             constelationsToFind[i] = true;
-        }
+        }*/
 
         currentLevel = 1;
-        cam= Camera.main;
-    }
+        cam = Camera.main;
 
-    public void OnConstellationFound(ConstellationNames name)
-    {
-        
-
-    }
-
-    public void OnTimeOver()
-    {
-        currentLevel++;
+        SceneManager.LoadScene("Game");
     }
 
     public void ChangeScene(string name)
@@ -84,20 +73,19 @@ public class GameManager : ValidatedMonoBehaviour
         SceneManager.LoadScene(name);
     }
 
-    public void OnSolvedLevel(int level)
+    public void LevelSolved()
     {
-        mDialogManager.startStoryPanel(storyManagers[level]);
+        currentLevel++;
+        mDialogManager.startStoryPanel(storyManagers[currentLevel]);
     }
 
     public void OnDialogFinished()
     {
+        mStressManager.ResetStress();
+        mConstellationsManager.nextLevel();
+        mConstellationsManager.HideConstellations();
         mDialogManager.openCloseStoryPanel(false);
-        currentLevel++;
     }
 
-    public void Quit()
-    {
-        Application.Quit();
-    }
-
+    public int getCurrentLevel() { return currentLevel; }
 }

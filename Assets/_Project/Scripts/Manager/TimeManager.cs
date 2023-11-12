@@ -18,7 +18,7 @@ public class TimeManager : MonoBehaviour
         if (currentRotation>= 360)
         {
             transform.Rotate(new Vector3(0, 0, -360));
-            GameManager.getInstance().OnTimeOver();
+            //GameManager.getInstance().OnTimeOver();
             currentRotation = 0;
         }
         else

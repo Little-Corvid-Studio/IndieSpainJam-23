@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Threading.Tasks;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 
@@ -10,9 +11,10 @@ public struct Conection
     public int PointA;
     public int PointB;
 }
+
 public class Constelation : MonoBehaviour
 {
-    [SerializeField]ConstellationNames name;
+    [SerializeField] ConstellationNames CName;
     [SerializeField] GameObject visualConnection;
    
     
@@ -24,39 +26,37 @@ public class Constelation : MonoBehaviour
     GameObject connectingObj;
     LineRenderer line;
 
-    [SerializeField] ConstellationsManager constellationsManager;
-    [SerializeField] int numConstellation;
+    private Transform tempTransform;
 
-    void Awake()
-    {
-        data = GameManager.getInstance().GetConstellationList().getConstellationData(name);
+    [SerializeField] ConstellationsManager constellationsManager;
+
+    void Awake() {
+        data = GameManager.getInstance().GetConstellationList().getConstellationData(CName);
         stars = new Star[data.numEstrellas];
-      
-        Debug.Log(solutionSprite!=null);
-    
+        constellationsManager = GetComponentInParent<ConstellationsManager>(includeInactive: true);
     }
 
     public void setSolutionImage(SolutionImage sol)
     {
         solutionSprite = sol;
     }
+
     public void AddStar(Star star)
     {
-        if (stars != null)
-        {
-            stars[star.GetIndex()] = star;
-        }
-
-        for(int i=0;i<stars.Length; i++) {
-            Debug.Log(name +" "+stars[i] != null);
+        if (stars != null) {
+            try {
+                stars[star.GetIndex()] = star;
+            } catch (Exception e) {
+                Debug.Log(name);
+                Debug.Log(e.Message);
+            }
+        } else {
+            Debug.Log("Stars es null");
         }
     }
 
-    
-
     bool isSolved()
     {
-        
         for(int i=0; i<stars.Length; i++)
         {
             for(int j = 0; j < stars.Length; j++)
@@ -64,48 +64,28 @@ public class Constelation : MonoBehaviour
                 if (data.conexiones[i, j]) return false;
             }
         }
-       
         return true;
-
-        
     }
 
-    // Update is called once per frame
     public void OnClick(int index)
     {
-
         currentConection = new Conection();
         currentConection.PointA = index;
-
-        connectingObj = Instantiate(visualConnection, this.transform);
-        line= connectingObj.GetComponent<LineRenderer>();
-
-        line.SetPosition(0, stars[index].transform.position);
-        line.SetPosition(1, stars[index].transform.position);
-
-        Debug.Log("Clicked " + index);
-        
-    }
-
-    public void OnReleaseNotClicked(int index)
-    {
     }
 
     public void OnRelease(int index)
     {
-        currentConection.PointB= index;
-        Debug.Log("Released " + index);
-
+        currentConection.PointB = index;
         checkSolution();
-
     }
 
     private void checkSolution()
     {
-        Debug.Log(currentConection.PointA + " " + currentConection.PointB);
         if (currentConection.PointA != -1 && currentConection.PointB != -1 && data.conexiones[currentConection.PointA, currentConection.PointB] && data.conexiones[currentConection.PointB, currentConection.PointA])
         {
-        
+            connectingObj = Instantiate(visualConnection, this.transform);
+            line = connectingObj.GetComponent<LineRenderer>();
+
             line.SetPosition(0, stars[currentConection.PointA].transform.position);
             line.SetPosition(1, stars[currentConection.PointB].transform.position);
             data.conexiones[currentConection.PointA, currentConection.PointB] = false;
@@ -114,25 +94,13 @@ public class Constelation : MonoBehaviour
 
             if (isSolved())
             {
-                Debug.Log("Hiii");
                 solutionSprite.Show();
-                GameManager.getInstance().OnConstellationFound(name);
-
-                constellationsManager.CheckConditionLevel(numConstellation);
+                constellationsManager.ConstellationFound(this);
             }
-
-
-
         }
         currentConection.PointA = -1;
         currentConection.PointB = -1;
         line = null;
         connectingObj = null;
-
     }
-       
-
-
-
-    
 }

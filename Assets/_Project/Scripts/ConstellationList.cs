@@ -8,19 +8,15 @@ public enum ConstellationNames
     TAURUS,
     GEMINI,
     CANCER,
-   
     VIRGO,
     LIBRA,
     SCORPIO,
     SAGITARIO,
-
     CAPRICORNIO,
     AQUARIUS,
     PISCIS,
     MAYOR,
     MINOR,
-
-    NUM_CONSTELLATIONS
 }
 
 public struct ConstellationData
@@ -28,6 +24,7 @@ public struct ConstellationData
     public int numEstrellas;
     public bool[,] conexiones; //matriz bidimensional de conexiones[indice estrella,nºconexion por estrella]
 }
+
 public class ConstellationList
 {
     public ConstellationData getConstellationData(ConstellationNames names)
@@ -83,7 +80,6 @@ public class ConstellationList
                 data.conexiones[5, 4] = true;
                 data.conexiones[4, 5] = true;
 
-
                 break;
             case ConstellationNames.GEMINI:
                 data.numEstrellas = 9;
@@ -137,7 +133,6 @@ public class ConstellationList
                         data.conexiones[i, j] = false;
                     }
                 }
-
 
                 data.conexiones[0, 1] = true;
                 data.conexiones[1, 0] = true;
@@ -212,7 +207,6 @@ public class ConstellationList
                 data.conexiones[1, 4] = true;
 
                 break;
-
             case ConstellationNames.SCORPIO:
                 data.numEstrellas = 7;
                 data.conexiones = new bool[7, 7];
@@ -242,7 +236,6 @@ public class ConstellationList
                 data.conexiones[6, 3] = true;
                 data.conexiones[3, 6] = true;
                 break;
-
             case ConstellationNames.SAGITARIO:
                 data.numEstrellas = 7;
                 data.conexiones = new bool[7, 7];
@@ -280,10 +273,7 @@ public class ConstellationList
                 data.conexiones[3, 2] = true;
                 data.conexiones[2, 3] = true;
 
-
                 break;
-
-
             case ConstellationNames.AQUARIUS:
                 data.numEstrellas = 9;
                 data.conexiones = new bool[9, 9];
@@ -335,14 +325,10 @@ public class ConstellationList
                 data.conexiones[4, 3] = true;
                 data.conexiones[3, 4] = true;
 
-
                 data.conexiones[4, 0] = true;
                 data.conexiones[0, 4] = true;
 
-
-
                 break;
-
             case ConstellationNames.PISCIS:
                 data.numEstrellas = 6;
                 data.conexiones = new bool[6, 6];
@@ -369,12 +355,10 @@ public class ConstellationList
                 data.conexiones[4, 5] = true;
                 data.conexiones[5, 4] = true;
 
-
                 data.conexiones[4, 0] = true;
                 data.conexiones[0, 4] = true;
 
                 break;
-
             case ConstellationNames.MAYOR:
                 data.numEstrellas = 6;
                 data.conexiones = new bool[6, 6];
@@ -405,7 +389,6 @@ public class ConstellationList
                 data.conexiones[5, 4] = true;
 
                 break;
-
             case ConstellationNames.MINOR:
                 data.numEstrellas = 6;
                 data.conexiones = new bool[6, 6];
